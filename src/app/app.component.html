@@ -8,23 +8,32 @@
 
       <form class="signup-form" [formGroup]="registerForm" (ngSubmit)="submitForm()">
 
-        <div>
+        <div class="form-element">
           <label for="username">User Name</label>
           <input type="text" id="username" name="username" autocomplete="off" formControlName="username">
         </div>
 
-        <div>
+        <div class="form-element">
           <label for="password">Password</label>
           <input type="text" id="password" name="password" autocomplete="off" formControlName="password">
         </div>
 
-        <div>
+        <div class="form-element">
           <label for="email">Email</label>
           <input type="text" id="email" name="email" autocomplete="off" formControlName="email">
         </div>
 
 
-        <button type="submit">Submit</button>
+        <div>
+          <input type="checkbox" id="subscription" name="subscription"  formControlName="subscription">
+          <label for="subscription">Subscription to the New Letter</label>
+        </div>
+
+
+        <div class="form-element">
+          <button type="submit">Submit</button>
+        </div>
+
       </form>
 
     </div>
