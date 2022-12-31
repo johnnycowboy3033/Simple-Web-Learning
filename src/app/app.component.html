@@ -23,6 +23,26 @@
           <input type="text" id="email" name="email" autocomplete="off" formControlName="email">
         </div>
 
+        <div class="form-element">
+          <label for="team">Team</label>
+          <select name="team" id="team" formControlName="team">
+            <option class="option" value=""></option>
+            <option *ngFor="let team of teamList" class="option" [ngValue]="team.id">{{ team.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-element">
+          <label >Gender</label>
+          <div>
+            <input type="radio" id="male" name="gender" value="M" formControlName="gender">
+            <label for="male">Male</label>
+          </div>
+          <div>
+            <input type="radio" id="female" name="gender" value="F" formControlName="gender">
+            <label for="male">Female</label>
+          </div>
+        </div>
+
 
         <div>
           <input type="checkbox" id="subscription" name="subscription"  formControlName="subscription">
