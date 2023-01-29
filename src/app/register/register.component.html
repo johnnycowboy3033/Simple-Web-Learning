@@ -1,0 +1,64 @@
+<!-- Layout -->
+<div class="layout">
+
+  <!-- Page title-->
+  <h1 class="page-title">Sign Up</h1>
+
+  <!-- Signup Form -->
+  <form class="signup-form" [formGroup]="registerForm" (ngSubmit)="submitForm()">
+
+    <!-- Username -->
+    <div class="ctrl-row --username form-element">
+      <label for="username">User Name</label>
+      <input type="text" id="username" name="username" autocomplete="off" formControlName="username">
+    </div>
+
+    <!-- Password -->
+    <div class="ctrl-row --password form-element">
+      <label for="password">Password</label>
+      <input type="text" id="password" name="password" autocomplete="off" formControlName="password">
+    </div>
+
+    <!-- E-mail -->
+    <div class="ctrl-row --email form-element">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" autocomplete="off" formControlName="email">
+    </div>
+
+    <!-- Team -->
+    <div class="ctrl-row --team form-element">
+      <label for="team">Team</label>
+      <select name="team" id="team" formControlName="team">
+        <option class="option" value=""></option>
+        <option *ngFor="let team of teamList" class="option" [ngValue]="team.id">{{ team.name}}</option>
+      </select>
+    </div>
+
+    <!-- Gender -->
+    <div class="ctrl-row --gender form-element">
+      <label >Gender</label>
+      <div>
+        <input type="radio" id="male" name="gender" value="M" formControlName="gender">
+        <label for="male">Male</label>
+      </div>
+      <div>
+        <input type="radio" id="female" name="gender" value="F" formControlName="gender">
+        <label for="male">Female</label>
+      </div>
+    </div>
+
+    <!-- News Letter -->
+    <div class="ctrl-row --news-letter">
+      <input type="checkbox" id="subscription" name="subscription"  formControlName="subscription">
+      <label for="subscription">Subscription to the New Letter</label>
+    </div>
+
+
+    <!-- Submit button -->
+    <div class="form-element">
+      <button class="submit-btn" type="submit">Submit</button>
+    </div>
+
+  </form>
+
+</div>
