@@ -1,5 +1,8 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
+import { RegisterComponent } from './register/register.component';
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 describe('AppComponent', () => {
@@ -13,7 +16,8 @@ describe('AppComponent', () => {
         ReactiveFormsModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        RegisterComponent,
       ],
     }).compileComponents();
   });
