@@ -78,4 +78,32 @@ describe('RegisterComponent', () => {
     expect((el.nativeElement as HTMLInputElement).value).toEqual(dummyValue);
   });
 
+  it('should mark username as invalid when it has no value', () => {
+    // Arrange
+    const ctrl = component.registerForm.get('username');
+
+    // Act
+    // @ts-ignore
+    ctrl.setValue(null);
+    fixture.detectChanges();
+
+    // @ts-ignore
+    expect(ctrl.invalid).toBeTruthy();
+
+  });
+
+  it('should mark username as valid when it has value', () => {
+    // Arrange
+    const ctrl = component.registerForm.get('username');
+
+    // Act
+    // @ts-ignore
+    ctrl.setValue('test');
+    fixture.detectChanges();
+
+    // @ts-ignore
+    expect(ctrl.valid).toBeTruthy();
+
+  });
+
 });
