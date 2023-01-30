@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
+import {By} from "@angular/platform-browser";
 
 import { RegisterComponent } from './register.component';
-
-import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -26,4 +26,15 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a ctrl-row element with class --username', () => {
+
+    const el = fixture.debugElement.query( By.css('.ctrl-row.--username'));
+    expect(el).toBeTruthy();
+    
+  });
+
+
+
+
 });

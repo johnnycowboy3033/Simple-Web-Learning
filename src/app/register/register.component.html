@@ -9,25 +9,25 @@
 
     <!-- Username -->
     <div class="ctrl-row --username form-element">
-      <label for="username">User Name</label>
-      <input type="text" id="username" name="username" autocomplete="off" formControlName="username">
+      <label for="username" class="ctrl-label">User Name</label>
+      <input type="text" class="ctrl" id="username" name="username" autocomplete="off" formControlName="username">
     </div>
 
     <!-- Password -->
     <div class="ctrl-row --password form-element">
-      <label for="password">Password</label>
-      <input type="text" id="password" name="password" autocomplete="off" formControlName="password">
+      <label for="password" class="ctrl-label" >Password</label>
+      <input type="text" class="ctrl" id="password" name="password" autocomplete="off" formControlName="password">
     </div>
 
     <!-- E-mail -->
     <div class="ctrl-row --email form-element">
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" autocomplete="off" formControlName="email">
+      <label for="email" class="ctrl-label" >Email</label>
+      <input type="text" class="ctrl" id="email" name="email" autocomplete="off" formControlName="email">
     </div>
 
     <!-- Team -->
     <div class="ctrl-row --team form-element">
-      <label for="team">Team</label>
+      <label for="team" class="ctrl-label" >Team</label>
       <select name="team" id="team" formControlName="team">
         <option class="option" value=""></option>
         <option *ngFor="let team of teamList" class="option" [ngValue]="team.id">{{ team.name}}</option>
@@ -36,7 +36,7 @@
 
     <!-- Gender -->
     <div class="ctrl-row --gender form-element">
-      <label >Gender</label>
+      <label class="ctrl-label" >Gender</label>
       <div>
         <input type="radio" id="male" name="gender" value="M" formControlName="gender">
         <label for="male">Male</label>
