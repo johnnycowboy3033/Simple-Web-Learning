@@ -49,4 +49,16 @@ describe('RegisterComponent', () => {
 
   });
 
+  it('should have an input element with class ctrl for the user field', () => {
+    //Arrange & Assert
+    const el = fixture.debugElement.query( By.css('.--username input.ctrl'));
+    expect(el).toBeTruthy();
+
+    expect(el.nativeElement.getAttribute('type')).toEqual('text');
+    expect(el.nativeElement.getAttribute('id')).toEqual('username');
+    expect(el.nativeElement.getAttribute('name')).toEqual('username');
+    expect(el.nativeElement.getAttribute('autocomplete')).toEqual('off');
+
+  });
+
 });
