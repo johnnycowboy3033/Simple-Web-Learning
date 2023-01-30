@@ -171,4 +171,26 @@ describe('RegisterComponent', () => {
 
   });
 
+  it('should render correct number of team options', () => {
+    // Arrange
+
+    const dummyTeamList = [
+      {
+        id:1,
+        name:'Test'
+      },
+      {
+        id:2,
+        name:'Dummy'
+      }
+    ];
+
+    component.teamList = dummyTeamList;
+    fixture.detectChanges();
+
+    const optionE1 = fixture.debugElement.queryAll( By.css('.--team .option'));
+    expect(optionE1.length).toEqual(dummyTeamList.length + 1);
+
+  });
+
 });
