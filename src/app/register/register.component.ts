@@ -38,7 +38,39 @@ export class RegisterComponent {
     subscription:[true]
   });
 
-  submitForm(){
+  isFormValid(): boolean{
+    return this.registerForm.valid;
+  }
+
+  submitForm(): void{
+
+    if(!this.isFormValid()){
+      window.alert('Please fill in all fields before submitting the form!');
+      return;
+    }
+
+    const body = this.registerForm.getRawValue();
+
+    let msg: string;
+
+    // @ts-ignore
+    let name = this.teamList.find(team => team.id === body.team).name;
+    msg = `
+      Your Registration Information:
+
+      Username: ${body.username}
+      Password: **********
+      E-mail: ${body.email}
+      Gender: ${body.gender === 'M' ? 'Male' : 'Female'}
+
+      Team: ${name}
+
+      Subscription: ${body.subscription ? 'YES' : 'NO'}
+      `;
+
+    window.confirm(msg);
+
+
 
   }
 
