@@ -193,4 +193,32 @@ describe('RegisterComponent', () => {
 
   });
 
+  it('should display correct text on the dropdown options', () => {
+    // Arrange
+
+    const dummyTeamList = [
+      {
+        id:1,
+        name:'Test'
+      },
+      {
+        id:2,
+        name:'Dummy'
+      }
+    ];
+
+    component.teamList = dummyTeamList;
+    fixture.detectChanges();
+
+    const optionE1 = fixture.debugElement.queryAll( By.css('.--team .option'));
+    optionE1.forEach( (el, index)=>{
+      if(index !== 0){
+        // @ts-ignore
+        expect((el.nativeElement as HTMLOptionElement).innerText).toEqual(dummyTeamList[index-1]['name']);
+      }
+    })
+
+
+  });
+
 });
