@@ -42,5 +42,11 @@ describe('RegisterComponent', () => {
 
   });
 
+  it('should display Username on the label for the username field', () => {
+    //Arrange & Assert
+    const el = fixture.debugElement.query( By.css('.--username .ctrl-label'));
+    expect(el.nativeElement.innerText).toEqual('Username');
+
+  });
 
 });
