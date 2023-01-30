@@ -106,4 +106,32 @@ describe('RegisterComponent', () => {
 
   });
 
+  it('should mark username as invalid when its value is longer than 10 characters', () => {
+    // Arrange
+    const ctrl = component.registerForm.get('username');
+
+    // Act
+    // @ts-ignore
+    ctrl.setValue('123456789123456789');
+    fixture.detectChanges();
+
+    // @ts-ignore
+    expect(ctrl.invalid).toBeTruthy();
+
+  });
+
+  it('should mark username as valid when its value is less than 10 characters', () => {
+    // Arrange
+    const ctrl = component.registerForm.get('username');
+
+    // Act
+    // @ts-ignore
+    ctrl.setValue('123456789');
+    fixture.detectChanges();
+
+    // @ts-ignore
+    expect(ctrl.valid).toBeTruthy();
+
+  });
+
 });
