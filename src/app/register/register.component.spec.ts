@@ -238,4 +238,36 @@ describe('RegisterComponent', () => {
     expect(selectedTeam).toEqual(dummyValue);
   });
 
+  it('should mark team as invalid when it has no value', () => {
+
+    // Arrange
+    const ctrl = component.registerForm.get('team');
+
+    // Act
+    // @ts-ignore
+    ctrl.setValue(null);
+    fixture.detectChanges();
+
+    // Assert
+    // @ts-ignore
+    expect(ctrl.invalid).toBeTruthy();
+
+  });
+
+  it('should mark team as valid when it has  value', () => {
+
+    // Arrange
+    const ctrl = component.registerForm.get('team');
+
+    // Act
+    // @ts-ignore
+    ctrl.setValue('test');
+    fixture.detectChanges();
+
+    // Assert
+    // @ts-ignore
+    expect(ctrl.valid).toBeTruthy();
+
+  });
+
 });
