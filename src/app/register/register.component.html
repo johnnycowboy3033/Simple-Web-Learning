@@ -36,21 +36,30 @@
 
     <!-- Gender -->
     <div class="ctrl-row --gender form-element">
-      <label class="ctrl-label" >Gender</label>
-      <div>
-        <input type="radio" id="male" name="gender" value="M" formControlName="gender">
-        <label for="male">Male</label>
+      <label  class="ctrl-label" >Gender</label>
+
+      <div class="radio-group ctrl">
+
+          <!-- Male -->
+          <div class="radio-option --male" >
+            <input type="radio" class="radio-ctrl" id="male" name="gender" value="M" formControlName="gender">
+            <label for="male" class="radio-label" >Male</label>
+          </div >
+
+        <!-- Female -->
+          <div class="radio-option --female">
+            <input type="radio" class="radio-ctrl" id="female" name="gender" value="F" formControlName="gender">
+            <label for="female" class="radio-label">Female</label>
+          </div>
+
       </div>
-      <div>
-        <input type="radio" id="female" name="gender" value="F" formControlName="gender">
-        <label for="male">Female</label>
-      </div>
+
     </div>
 
     <!-- News Letter -->
     <div class="ctrl-row --news-letter">
-      <input type="checkbox" id="subscription" name="subscription"  formControlName="subscription">
-      <label for="subscription">Subscription to the New Letter</label>
+      <input type="checkbox" class="ctrl --checkbox"  id="subscription" name="subscription"  formControlName="subscription">
+      <label for="subscription" class="ctrl-label --checkbox" >Subscribe to News Letter</label>
     </div>
 
 
