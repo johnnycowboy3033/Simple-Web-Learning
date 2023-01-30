@@ -61,4 +61,21 @@ describe('RegisterComponent', () => {
 
   });
 
+  it('should bind the username to its FormControl', () => {
+    // Arrange
+    const el = fixture.debugElement.query( By.css('.--username .ctrl'));
+    const ctrl = component.registerForm.get('username');
+
+    // Act
+    const dummyValue = '123';
+    // @ts-ignore
+    ctrl.setValue(dummyValue);
+    fixture.detectChanges();
+
+    // Act
+    expect(el.nativeElement.value).toEqual(dummyValue);
+    // @ts-ignore
+    expect((el.nativeElement as HTMLInputElement).value).toEqual(dummyValue);
+  });
+
 });
