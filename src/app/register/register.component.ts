@@ -55,16 +55,13 @@ export class RegisterComponent {
 
     // @ts-ignore
     let name = this.teamList.find(team => team.id === body.team).name;
-    msg = `
-      Your Registration Information:
-
+    msg = `Your Registration Information:
       Username: ${body.username}
-      Password: **********
+      Password: ******
       E-mail: ${body.email}
       Gender: ${body.gender === 'M' ? 'Male' : 'Female'}
 
       Team: ${name}
-
       Subscription: ${body.subscription ? 'YES' : 'NO'}
       `;
 

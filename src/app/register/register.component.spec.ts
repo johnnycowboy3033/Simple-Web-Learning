@@ -697,6 +697,6 @@ describe('RegisterComponent', () => {
     // Assert
     expect(fnc).not.toHaveBeenCalled();
   });
- 
+
 
 });
