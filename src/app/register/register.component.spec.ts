@@ -221,4 +221,21 @@ describe('RegisterComponent', () => {
 
   });
 
+
+  it('should bind the team to its FormControl', () => {
+    // Arrange
+    const el = fixture.debugElement.query( By.css('.--team .ctrl'));
+    const ctrl = component.registerForm.get('team');
+
+    // Act
+    const dummyValue = component.teamList[0];
+    // @ts-ignore
+    ctrl.setValue(dummyValue.id);
+    fixture.detectChanges();
+
+    // Act
+    const selectedTeam = component.teamList[(el.nativeElement as HTMLSelectElement).selectedIndex - 1]
+    expect(selectedTeam).toEqual(dummyValue);
+  });
+
 });
