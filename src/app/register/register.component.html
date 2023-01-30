@@ -28,7 +28,7 @@
     <!-- Team -->
     <div class="ctrl-row --team form-element">
       <label for="team" class="ctrl-label" >Team</label>
-      <select name="team" id="team" formControlName="team">
+      <select name="team" id="team" class="ctrl" formControlName="team">
         <option class="option" value=""></option>
         <option *ngFor="let team of teamList" class="option" [ngValue]="team.id">{{ team.name}}</option>
       </select>

@@ -134,4 +134,41 @@ describe('RegisterComponent', () => {
 
   });
 
+  it('should have a ctrl-row element with class --team', () => {
+    // Arrange & Asset
+
+    const el = fixture.debugElement.query( By.css('.ctrl-row.--team'));
+    expect(el).toBeTruthy();
+
+  });
+
+  it('should have a label with class ctrl-label for the team field', () => {
+    // Arrange & Asset
+
+    const el = fixture.debugElement.query( By.css('.--team label.ctrl-label'));
+    expect(el).toBeTruthy();
+
+    expect(el.nativeElement.getAttribute('for')).toEqual('team');
+
+  });
+
+  it('should display Team on the label for the team field', () => {
+    // Arrange & Asset
+
+    const el = fixture.debugElement.query( By.css('.--team .ctrl-label'));
+    expect(el.nativeElement.innerText).toEqual('Team');
+
+  });
+
+  it('should have a select element with class ctrl for the team field', () => {
+    // Arrange & Asset
+
+    const el = fixture.debugElement.query( By.css('.--team select.ctrl'));
+    expect(el).toBeTruthy();
+
+    expect(el.nativeElement.getAttribute('id')).toEqual('team');
+    expect(el.nativeElement.getAttribute('name')).toEqual('team');
+
+  });
+
 });
