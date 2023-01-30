@@ -31,10 +31,16 @@ describe('RegisterComponent', () => {
 
     const el = fixture.debugElement.query( By.css('.ctrl-row.--username'));
     expect(el).toBeTruthy();
-    
+
   });
 
+  it('should have a label with class ctrl-label for the username field', () => {
 
+    const el = fixture.debugElement.query( By.css('.--username label.ctrl-label'));
+    expect(el).toBeTruthy();
+    expect(el.nativeElement.getAttribute('for')).toEqual('username');
+
+  });
 
 
 });
